@@ -1,0 +1,68 @@
+# ── SectorTalkF1 — Configuration Netlify ──────────────────────
+
+[build]
+  publish = "."
+
+# Page d'accueil = index.html → redirige vers sectortalkf1_home.html
+[[redirects]]
+  from = "/"
+  to = "/sectortalkf1_home.html"
+  status = 200
+
+[[redirects]]
+  from = "/accueil"
+  to = "/sectortalkf1_home.html"
+  status = 301
+
+[[redirects]]
+  from = "/pilotes"
+  to = "/sectortalkf1_pilotes.html"
+  status = 301
+
+[[redirects]]
+  from = "/ecuries"
+  to = "/sectortalkf1_ecuries.html"
+  status = 301
+
+[[redirects]]
+  from = "/calendrier"
+  to = "/sectortalkf1_calendrier.html"
+  status = 301
+
+[[redirects]]
+  from = "/technique"
+  to = "/sectortalkf1_technique.html"
+  status = 301
+
+[[redirects]]
+  from = "/communaute"
+  to = "/sectortalkf1_communaute.html"
+  status = 301
+
+[[redirects]]
+  from = "/medias"
+  to = "/sectortalkf1_medias.html"
+  status = 301
+
+[[redirects]]
+  from = "/newsletter"
+  to = "/sectortalkf1_newsletter.html"
+  status = 301
+
+[[redirects]]
+  from = "/admin"
+  to = "/sectortalkf1_backoffice.html"
+  status = 301
+
+# Headers de sécurité et cache
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=600"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
